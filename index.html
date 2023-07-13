@@ -18,11 +18,10 @@
   </div>
   <div class="box2">
     
-    <div class="kadot">
-      <img class="checkSvg" src="./images/icon-check.svg" alt="">
-     <!-- <input class="kadot" type="checkbox"> -->
-    </div>
-    <form id="form" action="post"><input type="text"class="input" placeholder="Create a new todo.."></form>
+   
+    <form id="form" action="post">
+      <input id="taskCheckbox" type="checkbox">
+      <input id="taskInput" type="text" placeholder="Create a new todo.."></form>
     
   </div>
 </div>
@@ -30,6 +29,11 @@
     </div>
     <div class="lower">
       <div class="lowerBox">
+        <div class="done">
+          <ul id="taskList">
+          
+          </ul>
+        </div>
          <!-- <div class="task">
           <div class="kadot">
             <img src="./images/icon-check.svg" alt="">
@@ -41,7 +45,7 @@
           <div class="left"><p>5 items Left</p></div>
         <button class="all">All</button>
         <button class="active">Active</button>
-        <button class="completed">Completed</button>
+        <button class="complete">Completed</button>
         <button class="clearCompleted">Clear Completed</button>
         </div>
         
