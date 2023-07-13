@@ -2,7 +2,11 @@
 let sendBtn=document.querySelector(`.kadot`);
 let checkSvg=document.querySelector('.checkSvg');
 let inputValue=document.querySelector('.input');
-let todo=[]
+let tasksClass=document.querySelector('.lower');
+let completed=document.querySelector('.completed');
+let clearCompleted=document.querySelector('.clearCompleted');
+let all=document.querySelector('.all');
+let tasks=[]
 
 
 sendBtn.addEventListener(`click`,()=>{
@@ -16,7 +20,15 @@ document.addEventListener('submit',(e)=>{
 console.log(inputValue.value);
 todo.push(inputValue.value)
 // let todoItems=todo.push(inputValue.value);
-document.createElement('div')
+let task=document.createElement('div');
+tasksClass.appendChild(task)
+
+let parag=document.createElement('p')
+for(let i=0;i<=todo.length;i++)
+parag.innerText=todo[i]
+task.appendChild(parag);
+
+
 
 })
 console.log(todo);
