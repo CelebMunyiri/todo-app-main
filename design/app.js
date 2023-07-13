@@ -8,6 +8,14 @@ let all=document.querySelector('.all');
 const active=document.querySelector('.active')
 let tasks=[]
 
+// const checkbox = document.getElementById('yourCheckboxId');
+// checkbox.addEventListener('change', function() {
+//   if (this.checked) {
+//     this.classList.add('custom-checkbox');
+//   } else {
+//     this.classList.remove('custom-checkbox');
+//   }
+// });
 
 document.addEventListener('submit',(e)=>{
   e.preventDefault();
