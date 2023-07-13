@@ -168,7 +168,6 @@ height: 100%;
   .categories{
     width: 60%;
     height: 100%;
-    border: 1px solid blue;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -185,7 +184,6 @@ height: 100%;
     }
     .box,.lowerBox{
         width: 90%;
-
     }
     .dashboard{
         justify-content: space-between;

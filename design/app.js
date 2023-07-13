@@ -6,16 +6,21 @@ let complete=document.querySelector('.complete');
 let clearCompleted=document.querySelector('.clearCompleted');
 let all=document.querySelector('.all');
 const active=document.querySelector('.active')
+const upperSide=document.querySelector('.upper')
 let tasks=[]
 
-// const checkbox = document.getElementById('yourCheckboxId');
-// checkbox.addEventListener('change', function() {
-//   if (this.checked) {
-//     this.classList.add('custom-checkbox');
-//   } else {
-//     this.classList.remove('custom-checkbox');
-//   }
-// });
+const themeSwitch=document.querySelector('.box1');
+
+themeSwitch.addEventListener('click',()=>{
+upperSide.style.backgroundImage=`url("/images/bg-desktop-light.jpg")`
+if (themeSwitch.getAttribute('src') === '/images/icon-moon.svg') {
+  themeSwitch.setAttribute('src', '/images/icon-sun.svg');
+} else {
+  themeSwitch.setAttribute('src', '/images/icon-moon.svg');
+}
+})
+
+
 
 document.addEventListener('submit',(e)=>{
   e.preventDefault();
