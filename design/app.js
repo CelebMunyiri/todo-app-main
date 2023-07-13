@@ -1,6 +1,5 @@
 "use strict"
-let checkSvg=document.querySelector('.checkSvg');
-let inputValue=document.querySelector('.input');
+
 let tasksClass=document.querySelector('.lower');
 let complete=document.querySelector('.complete');
 let clearCompleted=document.querySelector('.clearCompleted');
@@ -12,12 +11,13 @@ let tasks=[]
 const themeSwitch=document.querySelector('.box1');
 
 themeSwitch.addEventListener('click',()=>{
-upperSide.style.backgroundImage=`url("/images/bg-desktop-light.jpg")`
-if (themeSwitch.getAttribute('src') === '/images/icon-moon.svg') {
-  themeSwitch.setAttribute('src', '/images/icon-sun.svg');
+upperSide.style.backgroundImage='url("/images/bg-desktop-light.jpg'
+if (themeSwitch.img.src === '/images/icon-moon.svg') {
+  themeSwitch.img.src =('/images/icon-sun.svg');
 } else {
-  themeSwitch.setAttribute('src', '/images/icon-moon.svg');
+  themeSwitch.img.src=('/images/icon-moon.svg');
 }
+tasksClass.style.background='white';
 })
 
 
