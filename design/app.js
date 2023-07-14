@@ -6,18 +6,24 @@ let clearCompleted=document.querySelector('.clearCompleted');
 let all=document.querySelector('.all');
 const active=document.querySelector('.active')
 const upperSide=document.querySelector('.upper')
+let lowerBox=document.querySelector('.lowerBox');
 let tasks=[]
 
-const themeSwitch=document.querySelector('.box1');
+const themeSwitch=document.querySelector('#sun');
+const darkmode=document.querySelector('#moon');
 
 themeSwitch.addEventListener('click',()=>{
 upperSide.style.backgroundImage='url("/images/bg-desktop-light.jpg'
-if (themeSwitch.img.src === '/images/icon-moon.svg') {
-  themeSwitch.img.src =('/images/icon-sun.svg');
-} else {
-  themeSwitch.img.src=('/images/icon-moon.svg');
-}
+// if (themeSwitch.img.src === '/images/icon-moon.svg') {
+//   themeSwitch.img.src =('/images/icon-sun.svg');
+// } else {
+//   themeSwitch.img.src=('/images/icon-moon.svg');
+// }
+
 tasksClass.style.background='white';
+darkmode.style.display = 'block'
+themeSwitch.style.display = 'none'
+lowerBox.style.background='white';
 })
 
 

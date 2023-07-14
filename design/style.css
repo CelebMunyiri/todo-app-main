@@ -75,11 +75,10 @@ input[type="checkbox"]{
     height: 20px;
     width: 20px;
     margin: 5px;
-    /* background: gray; */
      border: 1px solid hsl(237, 14%, 26%);
 }
-input[type="checkbox"].custom-checkbox:checked {
-    background:  linear-gradient(to bottom,hsl(192, 100%, 67%), hsl(280, 87%, 65%)) ;
+input[type="checkbox"]:checked::before {
+    background-color:  linear-gradient(to bottom,hsl(192, 100%, 67%), hsl(280, 87%, 65%)) !important;
   }
    
 .lower{
@@ -171,6 +170,9 @@ height: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
+  }
+  input[type="checkbox"].custom-checkbox:checked{
+    background: red;
   }
 
 @media screen and (max-width:600px){
