@@ -124,7 +124,8 @@ background: hsl(235, 24%, 19%);
     font-weight: 300;
 }
 .dashboard button:hover{
-    color: hsl(236, 33%, 92%);
+    /* color: hsl(236, 33%, 92%); */
+    color: hsl(220, 98%, 61%);
 }
 
 .drag{
@@ -171,9 +172,7 @@ height: 100%;
     justify-content: space-between;
     align-items: center;
   }
-  input[type="checkbox"].custom-checkbox:checked{
-    background: red;
-  }
+  
 
 @media screen and (max-width:600px){
     .upper{

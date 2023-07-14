@@ -7,6 +7,8 @@ let all=document.querySelector('.all');
 const active=document.querySelector('.active')
 const upperSide=document.querySelector('.upper')
 let lowerBox=document.querySelector('.lowerBox');
+let box2=document.querySelector('.box2')
+let categories=document.querySelector('.categories')
 let tasks=[]
 
 const themeSwitch=document.querySelector('#sun');
@@ -20,10 +22,12 @@ upperSide.style.backgroundImage='url("/images/bg-desktop-light.jpg'
 //   themeSwitch.img.src=('/images/icon-moon.svg');
 // }
 
-tasksClass.style.background='white';
+lowerBox.style.background='hsl(0, 0%, 98%)';
 darkmode.style.display = 'block'
 themeSwitch.style.display = 'none'
-lowerBox.style.background='white';
+tasksClass.style.background='hsl(236, 33%, 92%)';
+box2.style.background='hsl(0, 0%, 98%)'
+categories.style.background='hsl(0, 0%, 98%)'
 })
 
 
