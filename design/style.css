@@ -71,14 +71,26 @@ form{
     align-items: center;
 }
 input[type="checkbox"]{
+    /* content: ''; */
+    /* display: block; */
     clip-path: circle(46% at 50%50%);
     height: 20px;
     width: 20px;
     margin: 5px;
-     border: 1px solid hsl(237, 14%, 26%);
+     border: solid hsl(240, 2%, 10%);
+}
+input[type="checkbox"]:before{
+    content: '';
+    display: block;
 }
 input[type="checkbox"]:checked::before {
     background-color:  linear-gradient(to bottom,hsl(192, 100%, 67%), hsl(280, 87%, 65%)) !important;
+  }
+  input[type="checkbox"]:checked::afer{
+    content: '';
+    display: block;
+    border: solid gray;
+
   }
    
 .lower{
