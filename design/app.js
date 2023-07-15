@@ -30,7 +30,9 @@ box2.style.background='hsl(0, 0%, 98%)'
 categories.style.background='hsl(0, 0%, 98%)'
 })
 
-
+darkmode.addEventListener('click',()=>{
+  upperSide.style.backgroundImage='url(/images/bg-desktop-dark.jpg)'
+})
 
 document.addEventListener('submit',(e)=>{
   e.preventDefault();
