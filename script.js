@@ -9,6 +9,7 @@ const upperSide = document.querySelector('.upper');
 let lowerBox = document.querySelector('.lowerBox');
 let box2 = document.querySelector('.box2');
 let categories = document.querySelector('.categories');
+let leftItems=document.querySelector('.remaining');
 let tasks = getTasksFromStorage();
 
 const themeSwitch = document.querySelector('#sun');
@@ -26,6 +27,12 @@ themeSwitch.addEventListener('click', () => {
 
 darkmode.addEventListener('click', () => {
   upperSide.style.backgroundImage = 'url(/images/bg-desktop-dark.jpg)';
+  lowerBox.style.background = 'hsl(235, 24%, 19%)';
+  darkmode.style.display = 'none';
+  themeSwitch.style.display = 'block';
+  tasksClass.style.background = 'hsl(235, 21%, 11%)';
+  box2.style.background = 'hsl(235, 24%, 19%)';
+  categories.style.background = 'hsl(235, 24%, 19%)';
 });
 
 document.addEventListener('submit', (e) => {
@@ -51,6 +58,7 @@ function addTask() {
       completed: document.getElementById('taskCheckbox').checked
     };
     tasks.push(task);
+    leftItems.textContent=`${tasks.length}`
     saveTasksToStorage(tasks);
     taskInput.value = '';
     document.getElementById('taskCheckbox').checked = false;
@@ -107,6 +115,7 @@ function showActiveTasks() {
     li.appendChild(document.createTextNode(task.text));
     taskList.appendChild(li);
   });
+  
 }
 
 function clearCompletedTasks() {
