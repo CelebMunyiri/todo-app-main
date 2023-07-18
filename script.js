@@ -12,6 +12,7 @@ let categories = document.querySelector('.categories');
 let leftItems=document.querySelector('.remaining');
 let tasks = getTasksFromStorage();
 
+
 const themeSwitch = document.querySelector('#sun');
 const darkmode = document.querySelector('#moon');
 
@@ -23,6 +24,8 @@ themeSwitch.addEventListener('click', () => {
   tasksClass.style.background = 'hsl(236, 33%, 92%)';
   box2.style.background = 'hsl(0, 0%, 98%)';
   categories.style.background = 'hsl(0, 0%, 98%)';
+  
+  
 });
 
 darkmode.addEventListener('click', () => {

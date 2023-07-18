@@ -17,12 +17,6 @@ const darkmode=document.querySelector('#moon');
 
 themeSwitch.addEventListener('click',()=>{
 upperSide.style.backgroundImage='url("/images/bg-desktop-light.jpg'
-// if (themeSwitch.img.src === '/images/icon-moon.svg') {
-//   themeSwitch.img.src =('/images/icon-sun.svg');
-// } else {
-//   themeSwitch.img.src=('/images/icon-moon.svg');
-// }
-
 lowerBox.style.background='hsl(0, 0%, 98%)';
 darkmode.style.display = 'block'
 themeSwitch.style.display = 'none'
