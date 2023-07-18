@@ -149,7 +149,10 @@ background: hsl(235, 24%, 19%);
     color:hsl(237, 14%, 26%) ;
 }
 .completed {
+    appearance: none;
+    -webkit-appearance: none;
     text-decoration: line-through;
+    accent-color: hsl(87, 84%, 30%);
   }
   .done{
     width: 100%;

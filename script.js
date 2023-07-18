@@ -68,7 +68,7 @@ function addTask() {
     showAllTasks();
   }
 }
-
+// completed.style.accent-color='red'
 function showAllTasks() {
   const taskList = document.getElementById('taskList');
   taskList.innerHTML = '';
