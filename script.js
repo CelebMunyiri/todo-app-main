@@ -1,46 +1,46 @@
-"use strict"
+"use strict";
 
-let tasksClass=document.querySelector('.lower');
-let complete=document.querySelector('.complete');
-let clearCompleted=document.querySelector('.clearCompleted');
-let all=document.querySelector('.all');
-const active=document.querySelector('.active')
-const upperSide=document.querySelector('.upper')
-let lowerBox=document.querySelector('.lowerBox');
-let box2=document.querySelector('.box2')
-let categories=document.querySelector('.categories')
-let tasks=[]
+let tasksClass = document.querySelector('.lower');
+let complete = document.querySelector('.complete');
+let clearCompleted = document.querySelector('.clearCompleted');
+let all = document.querySelector('.all');
+const active = document.querySelector('.active');
+const upperSide = document.querySelector('.upper');
+let lowerBox = document.querySelector('.lowerBox');
+let box2 = document.querySelector('.box2');
+let categories = document.querySelector('.categories');
+let tasks = getTasksFromStorage();
 
+const themeSwitch = document.querySelector('#sun');
+const darkmode = document.querySelector('#moon');
 
-const themeSwitch=document.querySelector('#sun');
-const darkmode=document.querySelector('#moon');
+themeSwitch.addEventListener('click', () => {
+  upperSide.style.backgroundImage = 'url("/images/bg-desktop-light.jpg")';
+  lowerBox.style.background = 'hsl(0, 0%, 98%)';
+  darkmode.style.display = 'block';
+  themeSwitch.style.display = 'none';
+  tasksClass.style.background = 'hsl(236, 33%, 92%)';
+  box2.style.background = 'hsl(0, 0%, 98%)';
+  categories.style.background = 'hsl(0, 0%, 98%)';
+});
 
-themeSwitch.addEventListener('click',()=>{
-upperSide.style.backgroundImage='url("/images/bg-desktop-light.jpg'
-// if (themeSwitch.img.src === '/images/icon-moon.svg') {
-//   themeSwitch.img.src =('/images/icon-sun.svg');
-// } else {
-//   themeSwitch.img.src=('/images/icon-moon.svg');
-// }
+darkmode.addEventListener('click', () => {
+  upperSide.style.backgroundImage = 'url(/images/bg-desktop-dark.jpg)';
+});
 
-lowerBox.style.background='hsl(0, 0%, 98%)';
-darkmode.style.display = 'block'
-themeSwitch.style.display = 'none'
-tasksClass.style.background='hsl(236, 33%, 92%)';
-box2.style.background='hsl(0, 0%, 98%)'
-categories.style.background='hsl(0, 0%, 98%)'
-})
-
-darkmode.addEventListener('click',()=>{
-  upperSide.style.backgroundImage='url(/images/bg-desktop-dark.jpg)'
-})
-
-document.addEventListener('submit',(e)=>{
+document.addEventListener('submit', (e) => {
   e.preventDefault();
-addTask();
-})
+  addTask();
+});
 
+function getTasksFromStorage() {
+  const tasks = localStorage.getItem('tasks');
+  return tasks ? JSON.parse(tasks) : [];
+}
 
+function saveTasksToStorage(tasks) {
+  localStorage.setItem('tasks', JSON.stringify(tasks));
+}
 
 function addTask() {
   const taskInput = document.getElementById('taskInput');
@@ -51,6 +51,7 @@ function addTask() {
       completed: document.getElementById('taskCheckbox').checked
     };
     tasks.push(task);
+    saveTasksToStorage(tasks);
     taskInput.value = '';
     document.getElementById('taskCheckbox').checked = false;
     showAllTasks();
@@ -75,7 +76,6 @@ function showAllTasks() {
     taskList.appendChild(li);
   });
 }
-
 
 function showCompletedTasks() {
   const taskList = document.getElementById('taskList');
@@ -111,16 +111,20 @@ function showActiveTasks() {
 
 function clearCompletedTasks() {
   tasks = tasks.filter(task => !task.completed);
+  saveTasksToStorage(tasks);
   showAllTasks();
 }
 
 function toggleTaskCompletion(index) {
   tasks[index].completed = !tasks[index].completed;
+  saveTasksToStorage(tasks);
   showAllTasks();
 }
 
-all.addEventListener('click',()=>showAllTasks());
-active.addEventListener('click',()=>showActiveTasks());
-complete.addEventListener('click',()=>showCompletedTasks());
-clearCompleted.addEventListener('click',()=>clearCompletedTasks());
- 
+all.addEventListener('click', () => showAllTasks());
+active.addEventListener('click', () => showActiveTasks());
+complete.addEventListener('click', () => showCompletedTasks());
+clearCompleted.addEventListener('click', () => clearCompletedTasks());
+
+
+showAllTasks();
